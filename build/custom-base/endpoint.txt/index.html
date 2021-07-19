@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+
+		
+
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/start-03cda02d.js">
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/chunks/vendor-b98260c5.js">
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/chunks/paths-2c73d5fe.js">
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/layout.svelte-6bef5c22.js">
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/error.svelte-cf5431ba.js">
+		<link rel="stylesheet" href="https://cdn.example.com/assets/_app/assets/start-a8cd1609.css">
+
+		<script type="module">
+			import { start } from "https://cdn.example.com/assets/_app/start-03cda02d.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"/custom-base","assets":"https://cdn.example.com/assets"},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 404,
+					error: {name:"Error",message:"Not found: \u002Fcustom-base\u002Fendpoint.txt",stack:"Error: Not found: \u002Fcustom-base\u002Fendpoint.txt"},
+					nodes: [
+						import("https://cdn.example.com/assets/_app/layout.svelte-6bef5c22.js"),
+						import("https://cdn.example.com/assets/_app/error.svelte-cf5431ba.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/custom-base/endpoint.txt",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<h1>404</h1>
+
+<pre>Not found: /custom-base/endpoint.txt</pre>
+
+
+
+
+<pre>Error: Not found: /custom-base/endpoint.txt</pre>
+
+
+
+	
+</div>
+	</body>
+</html>

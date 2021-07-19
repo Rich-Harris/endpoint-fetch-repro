@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+
+		
+
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/start-bf0b6297.js">
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/chunks/vendor-2b0cfca2.js">
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/chunks/paths-2c73d5fe.js">
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/layout.svelte-134713a4.js">
+		<link rel="modulepreload" href="https://cdn.example.com/assets/_app/pages/index.svelte-921cee6b.js">
+		<link rel="stylesheet" href="https://cdn.example.com/assets/_app/assets/start-a8cd1609.css">
+
+		<script type="module">
+			import { start } from "https://cdn.example.com/assets/_app/start-bf0b6297.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"/custom-base","assets":"https://cdn.example.com/assets"},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("https://cdn.example.com/assets/_app/layout.svelte-134713a4.js"),
+						import("https://cdn.example.com/assets/_app/pages/index.svelte-921cee6b.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<p>from endpoint: hello from endpoint</p>
+<p>from asset: hello from asset</p>
+
+
+
+	<script type="application/json" data-type="svelte-data" data-url="/custom-base/endpoint.txt">{"status":200,"statusText":"","headers":{"content-type":"text/plain;charset=UTF-8"},"body":"hello from endpoint"}</script>
+
+	<script type="application/json" data-type="svelte-data" data-url="https://cdn.example.com/assets/asset.txt">{"status":200,"statusText":"","headers":{"content-type":"text/plain"},"body":"hello from asset"}</script>
+</div>
+	</body>
+</html>
